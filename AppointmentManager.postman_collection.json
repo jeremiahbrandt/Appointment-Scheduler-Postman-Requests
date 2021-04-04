@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "6f3aa7de-1b41-4156-ac91-fbdbd4ce0622",
+		"name": "AppointmentManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Get Client",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUri}}/client",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"client"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUri}}/client",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Client Favorite",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Uid\" : \"SVqVVvLxlZQinsSHruz3BgWCdSC2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUri}}/client/favorites",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"client",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client Favorite",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Uid\" : \"SVqVVvLxlZQinsSHruz3BgWCdSC2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUri}}/client/favorites",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"client",
+								"favorites"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register Client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Mary\",\r\n    \"lastName\": \"Anderson\"\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUri}}/client/register",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"client",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Schedule Appointment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"timeSlotId\": 140,\r\n    \"name\": \"Another Appointment\",\r\n    \"Description\": \"Yet another appointment scheduled through PostMan\"\r\n}            \r\n"
+						},
+						"url": {
+							"raw": "{{baseUri}}/client/appointments",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"client",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Appointment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"timeSlotId\": 132\r\n}            \r\n"
+						},
+						"url": {
+							"raw": "http://localhost:7071/api/client/appointments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7071",
+							"path": [
+								"api",
+								"client",
+								"appointments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkOGM3OTdlMDQ5YWFkZWViOWM5M2RiZGU3ZDAwMzJmNjk3NjYwYmQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc2VsZnByb2plY3QtNjc4ZmYiLCJhdWQiOiJzZWxmcHJvamVjdC02NzhmZiIsImF1dGhfdGltZSI6MTYxNzQ5MzA5MiwidXNlcl9pZCI6IkdEVjdBaHM4M0hieUs5VHBPZDQ1OVJFZlFIejIiLCJzdWIiOiJHRFY3QWhzODNIYnlLOVRwT2Q0NTlSRWZRSHoyIiwiaWF0IjoxNjE3NDkzMDkzLCJleHAiOjE2MTc0OTY2OTMsImVtYWlsIjoiY2xpZW50MkBleGFtcGxlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJjbGllbnQyQGV4YW1wbGUuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.G2ra_DzhIgJJz3VnTKtwZwM7SI3TAnpfy37eMQMZUeCeRxAzufgJEL1aNghj0bCHgZdPW8QkDxIdVKSHr3FetFcMvOKR23QCiOipabl74V2gAViCjpS8hQQQ3YtZ8BuW7vW0R1YSeOx9xxbw8gpb71HmjX5B7Eb5-lN3r1r9T9p7KBS6AgTXYJhacTz8e3qUc4Id0jxsKIJPcrJu8rc25YTg96lhqke-JCx_k-B6PK_ev9flcJkn38UzadeVi8nKNXdp5959x4WD9TAqDcDWsyE7OFmnIYqN8MJyQeBRAyePK8gzuFKsS9E_zT065l5lVSh_3ivRgFb20zNivzMZkQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Professional",
+			"item": [
+				{
+					"name": "Register Professional",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Robert\",\r\n    \"lastName\": \"Brown\",\r\n    \"occupation\": \"Teacher\",\r\n    \"shareableCode\": \"52kb7v\",\r\n    \"streetNumber\": 7825,\r\n    \"streetName\": \"Longfellow Road\",\r\n    \"city\": \"AL\",\r\n    \"state\": \"Dothan\",\r\n    \"zipCode\": 36301\r\n}"
+						},
+						"url": {
+							"raw": "{{baseUri}}/api/professional/register",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"api",
+								"professional",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddTimeSlot",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startTime\": \"06/10/2021 08:45:00\",\r\n    \"endTime\": \"06/10/2021 09:30:00\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{baseUri}}/professional/timeslots",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"professional",
+								"timeslots"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Professional",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{baseUri}}/professional",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"professional"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Professional",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUri}}/professional",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"professional"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkOGM3OTdlMDQ5YWFkZWViOWM5M2RiZGU3ZDAwMzJmNjk3NjYwYmQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vc2VsZnByb2plY3QtNjc4ZmYiLCJhdWQiOiJzZWxmcHJvamVjdC02NzhmZiIsImF1dGhfdGltZSI6MTYxNzQ5MzM4OCwidXNlcl9pZCI6IlNnSVhLN01UYmZabzFIem92NUpWWkx1ZXQ4ZDIiLCJzdWIiOiJTZ0lYSzdNVGJmWm8xSHpvdjVKVlpMdWV0OGQyIiwiaWF0IjoxNjE3NDkzMzg5LCJleHAiOjE2MTc0OTY5ODksImVtYWlsIjoicHJvZmVzc2lvbmFsM0BleGFtcGxlLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJwcm9mZXNzaW9uYWwzQGV4YW1wbGUuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.AeisrJ7MDu9czZyr8OC04nbr6gEPyL8ARgaxH4uTgHUAjepNdjKCgByRc0BXbjJmFFWYpfbCl4Qej3-nxLBMBTIkGlk95T6DaZh9OKtiyTIPErR4hfmiIJj4vqmlTIvnmRN6dATwcyFsrpbjO_ep_6R4vywEucjv03T65DqkEGrJM618I0Y5CRRp_Natssya_bfkA6_RY1Gg47jVwW4ozh2s7Nd2yZa9-fETTm39ZTvJklIj5yuauI-ZHnZExo9Q-TiWzfkpOXIPzMKvYPZavhdpgbqZfJGb859C5HOgP8ZLm1kdtEwfpK9swvzMku4ih196WzPnaXUBw16y3THWOQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "jwt",
+			"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjRlMDBlOGZlNWYyYzg4Y2YwYzcwNDRmMzA3ZjdlNzM5Nzg4ZTRmMWUiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2..."
+		},
+		{
+			"key": "baseUri",
+			"value": "http://localhost:7071/api"
+		},
+		{
+			"key": "azureUri",
+			"value": "https://se3910projectapi.azurewebsites.net/api"
+		},
+		{
+			"key": "localHostUri",
+			"value": "http://localhost:7071/api"
+		}
+	]
+}
